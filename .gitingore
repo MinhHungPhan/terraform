@@ -2,33 +2,23 @@
 **/*.tfstate
 **/*.tfstate.*
 
-# Ignore any .terraform directories
+# Ignore .terraform directories and their contents
 **/.terraform/
 
+# Ignore Terraform lock files in all directories
+**/terraform.lock.hcl
 
-# Ignore .terraform directories
-**/.terraform/*
+# Ignore override files in all directories
+**/override.tf
+**/override.tf.json
+**/*_override.tf
+**/*_override.tf.json
 
+# Ignore any crash log files in all directories
+**/crash.log
 
-# Ignore .tfstate files, which should not be committed
-*.tfstate
-*.tfstate.*
-
-
-# Ignore override files as they are usually used to adjust local settings
-override.tf
-override.tf.json
-*_override.tf
-*_override.tf.json
-
-
-# Ignore any crash log files
-crash.log
-
-
-# Ignore .tfvars files, which can contain sensitive data
-*.tfvars
-
+# Ignore .tfvars files in all directories
+**/*.tfvars
 
 # Ignore CLI configuration files
 cli.tfvars
