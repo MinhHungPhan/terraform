@@ -38,6 +38,30 @@ Before we begin, you will need the following:
     terraform init
 This command will download the Docker provider and initialize Terraform.
 
+### Setting Up the Docker Image Resource
+
+1. Open the existing Terraform configuration file, e.g. `main.tf`.
+2. Add the following code to the file to define the Docker image resource:
+
+    ```terraform
+    resource "docker_image" "nodered_image" {
+      name = "nodered/node-red:latest"
+    }
+    ```
+This code creates a Docker image resource in Terraform.
+
+The docker_image resource is used to create and manage Docker images. In this example, we create an image with the name "nodered/node-red:latest".
+
+The name parameter is used to specify the name of the Docker image. The format for a Docker image name is repository:tag.
+
+If the specified image does not exist on the host machine, the Docker provider will pull the image from the registry.
+
+This Terraform code defines a Docker image resource for the latest version of Node-RED.
+
+3. Run `terraform init` to initialize the Terraform working directory.
+4. Run `terraform plan` to see the changes that Terraform will make to create the Docker image resource.
+5. Run `terraform apply` to create the Docker image resource.
+
 ### Conclusion
 
 In this tutorial, we showed you how to set up a Docker provider in Terraform to start scripting with Docker. With Terraform, you can create and manage infrastructure as code, and using providers makes it easy to integrate with different APIs. Happy scripting!
