@@ -20,8 +20,6 @@ resource "random_string" "random" {
   upper   = false
 }
 
-
-
 resource "docker_container" "nodered_container" {
   count = 1
   name  = join("-",["nodered",random_string.random[count.index].result])
@@ -31,7 +29,6 @@ resource "docker_container" "nodered_container" {
     # external = 1880
   }
 }
-
 
 output "container-name" {
   value       = docker_container.nodered_container[*].name
