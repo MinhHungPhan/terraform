@@ -34,6 +34,10 @@ resource "docker_container" "nodered_container" {
     internal = var.int_port
     external = var.ext_port
   }
+  volumes {
+    container_path = "/data"
+    host_path      = "/home/ubuntu/environment/terraform/terraform-docker/noderedvol"
+  }
 }
 
 
