@@ -9,6 +9,12 @@ terraform {
 
 provider "docker" {}
 
+resource "null_resource" "dockervol" {
+  provisioner "local-exec" {
+    command = "mkdir noderedvol/ || true && sudo chown -R 1000:1000 noderedvol/"
+  }
+}
+
 resource "docker_image" "nodered_image" {
   name = "nodered/node-red:latest"
 }
