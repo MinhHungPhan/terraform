@@ -23,3 +23,6 @@
 # Ignore CLI configuration files
 cli.tfvars
 terraform.rc
+
+# Ignore the noderedvol directory and its contents
+noderedvol/
